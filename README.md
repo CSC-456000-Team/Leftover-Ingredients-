@@ -8,8 +8,8 @@
 ### App Evaluation 
 [Evaluation of your app across the following attributes]
 - **Category: Health and food**
-- **Market: people looking to learn how to cook or wanting to try to cook something new **
-- **Habit: Users can use this app everyday to cook new recipes or search fpr recipes with items they already have in their fridge **
+- **Market: people looking to learn how to cook or wanting to try to cook something new**
+- **Habit: Users can use this app everyday to cook new recipes or search fpr recipes with items they already have in their fridge**
 - **Scope: cooking enthusiest of all ages**
 
 ## Leftover-Ingredients Part 2
