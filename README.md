@@ -15,8 +15,8 @@
 ## Leftover-Ingredients Part 2
 
 ## User Stories
-- [ ] 
-- [ ] 
+- [ ] users can use their camera to take picture of ingredients and get recipes based on ingredients in the picture.
+- [ ] users can recieve recipes suggestions based on previous recipes made.
 - [ ]  
 - [ ]
 
@@ -34,7 +34,7 @@ Describe any challenges encountered while building the app.
 - [ ] Users can login to their account by providing thier email and password they made.
 - [ ] User can enter a list of ingridents into a serach bar and get recipes that include those ingredients  
 - [ ] Administartors can look at all users accounts and delete accounts
-- [ ] 
+- [ ] users can write comments on recipes. 
 
 ### App Walkthrough gif 
 
