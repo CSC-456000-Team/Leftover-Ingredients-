@@ -4,3 +4,4 @@ from django.db import models
 #    userName = models.CharField()
 #    password = models.CharField()
 #    email = models.CharField() 
+#    profilePhoto
