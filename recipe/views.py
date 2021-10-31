@@ -3,7 +3,7 @@ from .models import Post
 # Create your views here.
 
 # dummy data which wiil replace by database
-posts = [
+recipes = [
     {
         'author' : 'David',
         'title' : ' Avocado Toast',
@@ -20,7 +20,7 @@ posts = [
 
 def recipe(request):
     context = {
-        'posts': posts
+        'recipes': recipes
         # Post.objects.all()
     }
     return render(request, 'main/recipe.html', context)
