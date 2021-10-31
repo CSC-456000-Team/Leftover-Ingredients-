@@ -115,5 +115,3 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 
-# database file
-# *.sqlite3d
