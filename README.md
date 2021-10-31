@@ -30,14 +30,13 @@ Describe any challenges encountered while building the app.
 ## Leftover-Ingredients Part 1 
 
 ## User Stories
-- [ ] Users can make an account by provding personal information about themselves.
-- [ ] Users can login to their account by providing thier email and password they made.
-- [ ] User can enter a list of ingridents into a serach bar and get recipes that include those ingredients  
+- [ ] Users can make an account by provding personal information about themselves
+- [ ] Users can login to their account by providing thier email and password they made
+- [ ] User can enter a list of ingredients into a serach bar and get recipes that include those ingredients  
 - [ ] Administartors can look at all users accounts and delete accounts
-- [ ] users can write comments on recipes.
-- [ ] users will be able to locate the nearest food pantry to donate their leftover ingridents
-- [ ] users will be able to view omepage 
-- [ ] users will be able to view the about page                      
+- [ ] Users can write comments on recipes
+- [ ] Users will be able to locate the nearest food pantry to donate their leftover ingredients
+- [ ] Users will be able to view the about page                      
 
 ### App Walkthrough gif 
 
