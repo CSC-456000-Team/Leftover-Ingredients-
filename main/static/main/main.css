@@ -176,3 +176,10 @@ a.article-title:hover {
     margin-bottom: 0;
     text-transform: uppercase;
 }
+
+.about{
+    padding: 30px;
+}
+.about h1{
+    color:#1da3c5;
+}
