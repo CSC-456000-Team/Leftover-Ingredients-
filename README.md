@@ -23,7 +23,7 @@
 ## User Stories
 - [x] Users can make an account by provding personal information about themselves
 - [x] Users can login to their account by providing thier email and password they made
-- [x] Users will be able to edit their profile
+- [ ] Users will be able to edit their profile
 - [ ] User can enter a list of ingredients into a serach bar and get recipes that include those ingredients  
 - [x] Administartors can look at all users accounts and delete accounts
 - [ ] Users can write comments on recipes
