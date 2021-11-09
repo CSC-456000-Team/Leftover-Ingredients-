@@ -1,8 +1,9 @@
-from django.test import SimpleTestCase
-from django.urls import reverse, resolve
-from users.views import register, profile
 from django.contrib.auth.views import LoginView, LogoutView
-from main.views import home, about, recipe, search
+from django.test import SimpleTestCase
+from django.urls import resolve, reverse
+
+from main.views import about, home, recipe, search
+from users.views import profile, register
 
 
 class TestUrls(SimpleTestCase):
