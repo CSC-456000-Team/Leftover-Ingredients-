@@ -1,7 +1,7 @@
 body {
-	background: #fafafa;
-	color: #333333;
-	margin-top: 5rem;
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
 }
 
 h1,
@@ -10,176 +10,175 @@ h3,
 h4,
 h5,
 h6 {
-	color: #444444;
+  color: #444444;
 }
 
 ul {
-	margin: 0;
+  margin: 0;
 }
 
 .bg-steel {
-	background-color: #5f788a;
+  background-color: #5f788a;
 }
 
 .site-header .navbar-nav .nav-link {
-	color: #cbd5db;
+  color: #cbd5db;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .content-section {
-	background: #ffffff;
-	padding: 10px 20px;
-	border-radius: 3px;
-	margin-bottom: 20px;
-	margin-left: auto;
-	margin-right: auto;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-title {
-	color: #444444;
+  color: #444444;
 }
 
 a.article-title:hover {
-	color: #428bca;
-	text-decoration: none;
+  color: #428bca;
+  text-decoration: none;
 }
 
 .article-content {
-	white-space: pre-line;
+  white-space: pre-line;
 }
 
 .article-img {
-	height: 65px;
-	width: 65px;
-	margin-right: 16px;
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
 }
 
 .article-metadata {
-	padding-bottom: 1px;
-	margin-bottom: 4px;
-	border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .article-metadata a:hover {
-	color: #333;
-	text-decoration: none;
+  color: #333;
+  text-decoration: none;
 }
 
 .article-svg {
-	width: 25px;
-	height: 25px;
-	vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
 }
 
 .account-img {
-	height: 125px;
-	width: 125px;
-	margin-right: 20px;
-	margin-bottom: 16px;
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
 }
 
 .account-heading {
-	font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .description {
-    left: 50%;
-    position: absolute;
-    top: 45%;
-    transform: translate(-50%, -55%);
-    text-align: center;
+  left: 50%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -55%);
+  text-align: center;
 }
 .description h1 {
-    color: #318499;
+  color: #318499;
 }
 .description p {
-    color: #222;
-    font-size: 1.3rem;
-    line-height: 1.5;
+  color: #222;
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 .features {
-    margin: 4em auto;
-    padding: 1em;
-    position: relative;
+  margin: 4em auto;
+  padding: 1em;
+  position: relative;
 }
 .feature-title {
-    color: rgb(59, 185, 216);
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  color: rgb(59, 185, 216);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 .features img {
-    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    margin-bottom: 16px;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
 }
 
 .features .form-control,
 .features input {
-    border-radius: 0;
+  border-radius: 0;
 }
 .features .btn {
-    background-color: #1da3c5;
-    border: 1px solid #1da3c5;
-    color: #fff;
-    margin-top: 20px;
+  background-color: #1da3c5;
+  border: 1px solid #1da3c5;
+  color: #fff;
+  margin-top: 20px;
 }
 .features .btn:hover {
-    background-color: rgb(27, 126, 121);
-    border: 1px solid #333;
+  background-color: rgb(27, 126, 121);
+  border: 1px solid #333;
 }
 
 .page-footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 60px 0 30px;
+  background-color: #222;
+  color: #ccc;
+  padding: 60px 0 30px;
 }
 .footer-copyright {
-    color: #666;
-    padding: 40px 0;
+  color: #666;
+  padding: 40px 0;
 }
 
 .container-wrapper {
-    height: 500px;
-
+  height: 500px;
 }
 
 .background-home {
-    background: #dedec8;
-    padding: 4em 0;
+  background: #dedec8;
+  padding: 4em 0;
 }
 .team {
-    color: #5e5e55;
-    padding: 0 180px;
+  color: #5e5e55;
+  padding: 0 180px;
 }
 .team .card-columns {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
 }
 .team .card {
-    background:none;
-    border: none;
+  background: none;
+  border: none;
 }
 .team .card-title {
-    font-size: 1.3rem;
-    margin-bottom: 0;
-    text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }
 
-.about{
-    padding: 30px;
+.about {
+  padding: 30px;
 }
-.about h1{
-    color:#1da3c5;
+.about h1 {
+  color: #1da3c5;
 }

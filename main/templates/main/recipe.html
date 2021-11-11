@@ -1,22 +1,18 @@
+{% extends "main/base.html" %} {% block content %}
 
-{% extends "main/base.html" %}
-{% block content %}
-
-
-<h1> Site about recipe </h1>
+<h1>Site about recipe</h1>
 
 {% for recipe in recipes %}
-        <article class="media content-section">
-            <img class= "rounded-circle article-img" src="#" alt="">
-            <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="#">{{ recipe.author }}</a>
-                <small class="text-muted">{{ recipe.date_posted|date:"F d, Y" }}</small>
-            </div>
-            <h2><a class="article-title" href="#">{{ recipe.title }}</a></h2>
-            <p class="article-content">{{ recipe.content }}</p>
-            </div>
-        </article>
-    {% endfor %}
-{% endblock content %}
-{% block team-members %}{% endblock team-members %}
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="#" alt="" />
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ recipe.author }}</a>
+      <small class="text-muted">{{ recipe.date_posted|date:"F d, Y" }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ recipe.title }}</a></h2>
+    <p class="article-content">{{ recipe.content }}</p>
+  </div>
+</article>
+{% endfor %} {% endblock content %} {% block team-members %}{% endblock
+team-members %}
