@@ -1,30 +1,32 @@
 {% extends "main/base.html" %} {% load crispy_forms_tags %} {% block content %}
-<div class="content-section col-lg-6">
-  <form method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend class="text-center">Create an account</legend>
-      {{ form|crispy }}
-    </fieldset>
-    <div class="row mb-3">
-      <div class="col-12 d-flex">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="cb1" />
-          <label class="custom-control-label" for="cb1"
-            >I agree to terms of service</label
-          >
+<div class="container">
+  <div class="content-section col-lg-6">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="text-center">Create an account</legend>
+        {{ form|crispy }}
+      </fieldset>
+      <div class="row mb-3">
+        <div class="col-12 d-flex">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="cb1" />
+            <label class="custom-control-label" for="cb1"
+              >I agree to terms of service</label
+            >
+          </div>
         </div>
       </div>
+      <div class="form-group text-center">
+        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+      </div>
+    </form>
+    <div class="pt-3 text-center">
+      <small class="text-muted">
+        Already Have an Account?
+        <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+      </small>
     </div>
-    <div class="form-group text-center">
-      <button class="btn btn-outline-info" type="submit">Sign Up</button>
-    </div>
-  </form>
-  <div class="pt-3 text-center">
-    <small class="text-muted">
-      Already Have an Account?
-      <a class="ml-2" href="{% url 'login' %}">Sign In</a>
-    </small>
   </div>
 </div>
 {% endblock content %} {% block team-members %}{% endblock team-members %}

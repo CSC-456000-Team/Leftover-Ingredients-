@@ -1,18 +1,23 @@
 {% extends "main/base.html" %} {% block content %}
-
-<h1>Site about recipe</h1>
-
-{% for recipe in recipes %}
-<article class="media content-section">
-  <img class="rounded-circle article-img" src="#" alt="" />
-  <div class="media-body">
-    <div class="article-metadata">
-      <a class="mr-2" href="#">{{ recipe.author }}</a>
-      <small class="text-muted">{{ recipe.date_posted|date:"F d, Y" }}</small>
+<div class="container">
+  <h1>Recipe</h1>
+  <br />
+  <br />
+  <!-- This is Dummies, need to setup DB and load recipes from DB -->
+  {% for recipeDummy in recipeDummies %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="#" alt="" />
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ recipeDummy.author }}</a>
+        <small class="text-muted"
+          >{{ recipeDummy.date_posted|date:"F d, Y" }}</small
+        >
+      </div>
+      <h2><a class="article-title" href="#">{{ recipeDummy.title }}</a></h2>
+      <p class="article-content">{{ recipeDummy.content }}</p>
     </div>
-    <h2><a class="article-title" href="#">{{ recipe.title }}</a></h2>
-    <p class="article-content">{{ recipe.content }}</p>
-  </div>
-</article>
-{% endfor %} {% endblock content %} {% block team-members %}{% endblock
-team-members %}
+  </article>
+  {% endfor %}
+</div>
+{% endblock content %} {% block team-members %}{% endblock team-members %}

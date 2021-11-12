@@ -22,6 +22,7 @@
     />
 
     <link rel="stylesheet" href="{% static 'main/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/search-bar.css' %}" />
 
     {% if title %}
     <title>LeftoverIngredients - {{ title }}</title>
@@ -53,10 +54,10 @@
               <a class="nav-item nav-link" href="{% url 'main-about' %}"
                 >About</a
               >
-              <a class="nav-item nav-link" href="{% url 'main-recipe' %}"
+              <a class="nav-item nav-link" href="{% url 'recipe-home' %}"
                 >Recipe</a
               >
-              <a class="nav-item nav-link" href="{% url 'main-search' %}"
+              <a class="nav-item nav-link" href="{% url 'recipe-search' %}"
                 >Search</a
               >
             </div>
@@ -79,12 +80,12 @@
       </nav>
     </header>
 
-    <main role="main" class="container">
+    <main role="main">
       <div>
         <div>
           {% if messages %} {% for message in messages %}
           <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-          {% endfor %} {% endif %} {% block content %}{% endblock %}
+          {% endfor %} {% endif %} {% block content %} {% endblock %}
         </div>
       </div>
     </main>
