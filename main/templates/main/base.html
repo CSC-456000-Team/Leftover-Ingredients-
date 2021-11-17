@@ -1,140 +1,178 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="{% static 'main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/search-bar.css' %}" />
 
     {% if title %}
-        <title>LeftoverIngredients - {{ title }}</title>
+    <title>LeftoverIngredients - {{ title }}</title>
     {% else %}
-        <title>LeftoverIngredients</title>
+    <title>LeftoverIngredients</title>
     {% endif %}
-</head>
-<body>
+  </head>
+  <body>
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
-          <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'main-home' %}">Leftover Ingredients</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'main-home' %}"
+            >Leftover Ingredients</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggle"
+            aria-controls="navbarToggle"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="{% url 'main-home' %}">Home</a>
-                <a class="nav-item nav-link" href="{% url 'main-about' %}">About</a>
-                <a class="nav-item nav-link" href="{% url 'main-recipe' %}">Recipe</a>
-                <a class="nav-item nav-link" href="{% url 'main-search' %}">Search</a>
-              </div>
-              <!-- Navbar Right Side -->
-              <div class="navbar-nav">
-                {% if user.is_authenticated %}
-                  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                {% else %}
-                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                {% endif %}
-              </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'main-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'main-about' %}"
+                >About</a
+              >
+              <a class="nav-item nav-link" href="{% url 'recipe-home' %}"
+                >Recipe</a
+              >
+              <a class="nav-item nav-link" href="{% url 'recipe-search' %}"
+                >Search</a
+              >
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-item nav-link" href="{% url 'profile' %}"
+                >Profile</a
+              >
+              {% else %}
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-item nav-link" href="{% url 'register' %}"
+                >Register</a
+              >
+              {% endif %}
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
     </header>
 
-    <main role="main" class="container">
+    <main role="main">
       <div>
         <div>
-            {% if messages %}
-              {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-            {% block content %}{% endblock %}
-          </div>
+          {% if messages %} {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+          {% endfor %} {% endif %} {% block content %} {% endblock %}
+        </div>
       </div>
     </main>
 
     {% block team-members %}
-      <div class="background-home">
-        <div class="container-fluid team">
-            <div class="row">
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Anthony</h4>
-                    <p class="card-text">Customer</p>
-                </div>
-              </div>
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">David</h4>
-                    <p class="card-text">Designer and Documenter</p>
-                </div>
-              </div>
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Jinho</h4>
-                    <p class="card-text">Integrator and Deployer</p>
-                </div>
-              </div>
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Kevin</h4>
-                    <p class="card-text">Code Reviewer</p>
-                </div>
-              </div>
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Nezar</h4>
-                    <p class="card-text">Unit Tester</p>
-                </div>
-              </div>
-              <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Tufayel</h4>
-                    <p class="card-text">Presenter and Tracker</p>
-                </div>
-              </div>
+    <div class="background-home">
+      <div class="container-fluid team">
+        <div class="row">
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">Anthony</h4>
+              <p class="card-text">Customer</p>
             </div>
+          </div>
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">David</h4>
+              <p class="card-text">Designer and Documenter</p>
+            </div>
+          </div>
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">Jinho</h4>
+              <p class="card-text">Integrator and Deployer</p>
+            </div>
+          </div>
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">Kevin</h4>
+              <p class="card-text">Code Reviewer</p>
+            </div>
+          </div>
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">Nezar</h4>
+              <p class="card-text">Unit Tester</p>
+            </div>
+          </div>
+          <div class="card col-lg-2 col-md-3 col-sm-4 text-center">
+            <div class="card-body">
+              <h4 class="card-title">Tufayel</h4>
+              <p class="card-text">Presenter and Tracker</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     {% endblock team-members%}
 
     <footer class="page-footer">
       <div class="container">
-          <div class="row">
-              <div class="col-lg-8 col-md-8 col-sm-12">
-                  <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
-                  <p>Topics in Software Engineering Project</p>
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">
+              Additional Information
+            </h6>
+            <p>Topics in Software Engineering Project</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
-              <h6 class="text-uppercase font-weight-bold">Contact</h6>
-              <p>Anthony
-              <br/>anthony@gmail.com
-              <br/>Number Currently Unavailable</p>
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>
+              Anthony <br />anthony@gmail.com <br />Number Currently Unavailable
+            </p>
           </div>
-      <div>
-      <div class="footer-copyright text-center">© 2021 Copyright: Leftover Ingredients</div>
-  </footer>
-
-
-
+        </div>
+      </div>
+      <div class="footer-copyright text-center">
+        © 2021 Copyright: Leftover Ingredients
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

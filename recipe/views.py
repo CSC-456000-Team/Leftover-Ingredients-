@@ -1,11 +1,9 @@
 from django.shortcuts import render
 
-from .models import Post
-
-# Create your views here.
+from .models import Recipe
 
 # dummy data which wiil replace by database
-recipes = [
+recipeDummies = [
     {
         "author": "David",
         "title": " Avocado Toast",
@@ -23,11 +21,26 @@ recipes = [
 
 def recipe(request):
     context = {
-        "recipes": recipes
-        # Post.objects.all()
+        "title": "Recipe",
+        "recipeDummies": recipeDummies
+        # Recipe.objects.all()
     }
     return render(request, "main/recipe.html", context)
 
 
-# def about(request):
-#     return render(request, 'blog/about.html', {'title': 'About'})
+# -------------------------- DB need to be setup for testing -------------------
+def search(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        # recipes = Recipe.objects.filter(name__contains=searched)
+        return render(
+            request,
+            "main/search.html",
+            {
+                "searched": searched
+                # ,
+                # "recipes": recipes
+            },
+        )
+    else:
+        return render(request, "main/search.html", {"title": "Search"})
