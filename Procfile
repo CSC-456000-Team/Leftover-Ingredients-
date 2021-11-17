@@ -1,2 +1,2 @@
-web: gunicorn myproject.wsgi
+web: gunicorn LeftoverIngredients.wsgi
 release: python manage.py migrate
