@@ -1,49 +1,138 @@
-{% extends "main/base.html" %}
-{% block content %}
-<header class="page-header header container-fluid">
+{% extends "main/base.html" %} {% block content %}
+<section id="index-header" class="">
+  <div class="overlay"></div>
+  <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video> -->
 
-    <div class="container-wrapper">
-
-
-    <div class="description">
-        <h1>Welcome to Leftover Ingredients!</h1>
-        <p>Tired of having leftover ingredients inside your house and don't know what to do with it? Guilty of throwing it out in the trash? Hungry right now as well? Yeah I can tell. Well you came to the perfect spot. All of your problems will be solved now!</p>
-        <button class="btn btn-outline-info btn-lg" onclick="location.href = 'about/';">Tell Me More!</button>
-
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100">
+        <div class="index-search-bar">
+          <form
+            id="i-search-bar"
+            role="search"
+            method="POST"
+            action="{% url 'recipe-search' %}"
+          >
+            <fieldset>
+              <legend>Search Our Best Recipe Today</legend>
+              <div class="inner-form">
+                <div class="input-field">
+                  <button class="btn-search" type="submit">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      ></path>
+                    </svg>
+                  </button>
+                  {% csrf_token %}
+                  <input
+                    id="search"
+                    type="search"
+                    name="searched"
+                    placeholder=""
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="suggestion-wrap">
+                <span>Avocado Toast</span>
+                <span>Pumpkin Pie</span>
+                <span>Salad</span>
+                <span>Pancake</span>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<header class="page-header header container-fluid">
+  <div class="container-wrapper">
+    <div class="description">
+      <h1>Welcome to Leftover Ingredients!</h1>
+      <p>
+        Tired of having leftover ingredients inside your house and don't know
+        what to do with it? Guilty of throwing it out in the trash? Hungry right
+        now as well? Yeah I can tell. Well you came to the perfect spot. All of
+        your problems will be solved now!
+      </p>
+      <button
+        class="btn btn-outline-info btn-lg"
+        onclick="location.href = 'about/';"
+      >
+        Tell Me More!
+      </button>
+    </div>
+  </div>
 </header>
 
-    <div class="container features">
-
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title">Mushroom and Brussels Sprouts Pizza </h3>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*" class="img-fluid">
-                <p>A ball of store-bought dough is the easiest way to experience freshly made pizza without calling delivery. This pie layers in fontina cheese and Shiitake mushrooms amid bright balsamic glaze and crunchy sprouts. It's a rustic 25-minute dinner you'll simply love.</p>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title">Veggie Medley on Sweet Potatoes</h3>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/1458853694-ghk-0416-veggie-trio-on-sweet-mash-1604352648.jpg?crop=0.335xw:1.00xh;0.425xw,0&resize=980:*" class="img-fluid">
-                <p>A delicious fall-time vegetarian dinner, this bright bowl of sweet spuds is blended into a silky bed for fresh veggies thanks to the addition of Greek yogurt and (plenty of) butter. It's all ready in just under 25 mins!</p>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                <h3 class="feature-title">Leave Feedback!</h3>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" name="">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email Address" name="email">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="4"
-                        placeholder="Feedback"></textarea>
-                </div>
-                    <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
-            </div>
-        </div>
+<div class="container features">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <h3 class="feature-title">Mushroom and Brussels Sprouts Pizza</h3>
+      <img
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
+        class="img-fluid"
+      />
+      <p>
+        A ball of store-bought dough is the easiest way to experience freshly
+        made pizza without calling delivery. This pie layers in fontina cheese
+        and Shiitake mushrooms amid bright balsamic glaze and crunchy sprouts.
+        It's a rustic 25-minute dinner you'll simply love.
+      </p>
     </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <h3 class="feature-title">Veggie Medley on Sweet Potatoes</h3>
+      <img
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/1458853694-ghk-0416-veggie-trio-on-sweet-mash-1604352648.jpg?crop=0.335xw:1.00xh;0.425xw,0&resize=980:*"
+        class="img-fluid"
+      />
+      <p>
+        A delicious fall-time vegetarian dinner, this bright bowl of sweet spuds
+        is blended into a silky bed for fresh veggies thanks to the addition of
+        Greek yogurt and (plenty of) butter. It's all ready in just under 25
+        mins!
+      </p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <h3 class="feature-title">Leave Feedback!</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" name="" />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email Address"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Feedback"
+        ></textarea>
+      </div>
+      <input
+        type="submit"
+        class="btn btn-secondary btn-block"
+        value="Send"
+        name=""
+      />
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
