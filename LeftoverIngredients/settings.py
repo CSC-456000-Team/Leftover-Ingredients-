@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+# Configure Django App for Heroku.
+import django_heroku
 import os
 from pathlib import Path
 
@@ -116,6 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static'),
+)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
 
@@ -135,6 +141,4 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-# Configure Django App for Heroku.
-import django_heroku
 django_heroku.settings(locals())
