@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-#import django_heroku
+import django_heroku
 from pathlib import Path
 import os
 from pathlib import Path
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+django_heroku.settings(locals(), staticfiles=False)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -117,6 +118,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
@@ -133,4 +136,7 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
+
+#Define COOKIE AGE for Remember me section
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30 * 12 # 12 Months (Months are 30days so 360 days in total)
