@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ADMINS = [('Anthony','acampan000@citymail.cuny.edu'),('David','dbalaba000@citymail.cuny.edu'),('test','tttesttting6@gmail.com')]
+ADMINS = [('Anthony','acampan000@citymail.cuny.edu'),('David','dbalaba000@citymail.cuny.edu'),('Nezar','nezarv2k@gmail.com'),('test','tttesttting6@gmail.com')]
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
