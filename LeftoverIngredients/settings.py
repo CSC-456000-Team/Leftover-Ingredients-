@@ -26,8 +26,17 @@ SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+ADMINS = [('Anthony','acampan000@citymail.cuny.edu'),('David','dbalaba000@citymail.cuny.edu'),('test','tttesttting6@gmail.com')]
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+
+# Email Settings: Setting up the account that the application is going to use to send emails from
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tttesttting6@gmail.com'
+EMAIL_HOST_PASSWORD = 'testing123!'
 
 
 # Application definition
