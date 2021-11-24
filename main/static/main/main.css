@@ -188,7 +188,7 @@ a.article-title:hover {
     display: grid;
     gap: 2rem 1rem;
   }
-  
+
   .recipes-list {
     display: grid;
     gap: 2rem 1rem;
@@ -247,7 +247,7 @@ a.article-title:hover {
       height: 10rem;
     }
   }
-  
+
   @media screen and (min-width: 992px) {
     .recipes-container {
       grid-template-columns: 200px 1fr;
@@ -256,7 +256,7 @@ a.article-title:hover {
     .recipes-list {
       grid-template-columns: 1fr 1fr;
     }
-  
+
     .recipe p {
       font-size: 0.85rem;
     }
@@ -269,7 +269,7 @@ a.article-title:hover {
       grid-template-columns: 1fr;
     }
   }
-  
+
   @media screen and (min-width: 1200px) {
     .recipe h5 {
       font-size: 1.15rem;
