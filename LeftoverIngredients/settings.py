@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import django_heroku
-from pathlib import Path
 import os
+from os import environ as env
+from pathlib import Path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
+SECRET_KEY = env['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,9 +87,9 @@ DATABASES = {
     "default": {
                 "ENGINE": "django.db.backends.postgresql_psycopg2",
                 "NAME": "d5gilrqcksk06t",
-                "USER": "lvegmbacyhebqj",
-                "PASSWORD":"608550963ee18f65f17a56145ea4231ad6ce73d7bc5d2a0a4852aea53f515b4a",
-                "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
+                "USER": env['DATABASE_USER'],
+                "PASSWORD": env['DATABASE_PASSWORD'],
+                "HOST": env['DATABASE_HOST'],
                 "PORT":"5432", 
     }
 }
@@ -131,7 +132,7 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
+API_KEY = env['API_KEY_SPOONACULAR']  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
