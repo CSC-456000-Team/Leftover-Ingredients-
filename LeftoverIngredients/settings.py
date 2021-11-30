@@ -157,5 +157,3 @@ DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # print(os.environ.get('AWS_ACCESS_KEY_ID'))
 # print(os.environ.get('AWS_SECRET_ACCESS_KEY'))
 # print(os.environ.get('AWS_STORAGE_BUCKET_NAME'))
-
-django_heroku.settings(locals())
