@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -155,3 +157,5 @@ DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # print(os.environ.get('AWS_ACCESS_KEY_ID'))
 # print(os.environ.get('AWS_SECRET_ACCESS_KEY'))
 # print(os.environ.get('AWS_STORAGE_BUCKET_NAME'))
+
+django_heroku.settings(locals())
