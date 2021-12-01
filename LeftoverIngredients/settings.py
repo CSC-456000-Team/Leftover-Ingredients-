@@ -30,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "e5e2eb0889b637b654ca2bc30f40fc5a79dbb4da26240648"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 
 ALLOWED_HOSTS = ["leftoveringredients.herokuapp.com"]
 
