@@ -131,7 +131,7 @@ MEDIA_URL = "/media/"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
+# API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
