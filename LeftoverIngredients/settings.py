@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
-from pathlib import Path
 
+import os
+from os import environ as env
+from pathlib import Path
 # import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
+SECRET_KEY = env['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,8 +31,18 @@ DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
 # ["127.0.0.1", ".herokuapp.com"]
 
-# Application definition
+ADMINS = [('Anthony','acampan000@citymail.cuny.edu'),('David','dbalaba000@citymail.cuny.edu'),('Nezar','nezarv2k@gmail.com'),('test','tttesttting6@gmail.com')]
 
+# Email Settings: Setting up the account that the application is going to use to send emails from
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = env['EMAIL_HOST_PASSWORD']
+
+
+# Application definition
 INSTALLED_APPS = [
     "recipeComments.apps.RecipecommentsConfig",
     "main.apps.MainConfig",
@@ -84,6 +95,15 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 
 DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
+#     "default": {
+#                 "ENGINE": "django.db.backends.postgresql_psycopg2",
+#                 "NAME": "d5gilrqcksk06t",
+#                 "USER": env['DATABASE_USER'],
+#                 "PASSWORD": env['DATABASE_PASSWORD'],
+#                 "HOST": env['DATABASE_HOST'],
+#                 "PORT":"5432", 
+#     }
+
     # "default": {
     #     "ENGINE": "django.db.backends.postgresql_psycopg2",
     #     "NAME": "d5gilrqcksk06t",
@@ -132,7 +152,7 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
+API_KEY = env['API_KEY_SPOONACULAR']  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
