@@ -20,11 +20,11 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: ""
-    hooks:
-      - id: prettier
-  - repo: https://github.com/motet-a/jinjalint
-    rev: ""
-    hooks:
-      - id: jinjalint
+  # - repo: https://github.com/pre-commit/mirrors-prettier
+  #   rev: ""
+  #   hooks:
+  #     - id: prettier
+  # - repo: https://github.com/motet-a/jinjalint
+  #   rev: ""
+  #   hooks:
+  #     - id: jinjalint
