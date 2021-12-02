@@ -9,9 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
 import os
-from os import environ as env
 from pathlib import Path
 
 # import django_heroku
@@ -24,12 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 
 # Random Secret Key generaged for temporary using.
 SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 # "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
 # env['DJANGO_SECRET_KEY']
+=======
 SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
+>>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
