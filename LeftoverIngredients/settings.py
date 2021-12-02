@@ -9,10 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
-from pathlib import Path
+
 import os
+from os import environ as env
 from pathlib import Path
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,16 +23,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
+SECRET_KEY = env['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
+# ["127.0.0.1", ".herokuapp.com"]
+
+ADMINS = [('Anthony','acampan000@citymail.cuny.edu'),('David','dbalaba000@citymail.cuny.edu'),('Nezar','nezarv2k@gmail.com'),('test','tttesttting6@gmail.com')]
+
+# Email Settings: Setting up the account that the application is going to use to send emails from
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = env['EMAIL_HOST_PASSWORD']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "recipeComments.apps.RecipecommentsConfig",
     "main.apps.MainConfig",
@@ -44,8 +55,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "storages",
 ]
-django_heroku.settings(locals(), staticfiles=False)
+# django_heroku.settings(locals(), staticfiles=False)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -82,15 +94,24 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    #"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
-    "default": {
-                "ENGINE": "django.db.backends.postgresql_psycopg2",
-                "NAME": "d5gilrqcksk06t",
-                "USER": "easonxsctfwuug",
-                "PASSWORD":"986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
-                "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
-                "PORT":"5432", 
-    }
+    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
+#     "default": {
+#                 "ENGINE": "django.db.backends.postgresql_psycopg2",
+#                 "NAME": "d5gilrqcksk06t",
+#                 "USER": env['DATABASE_USER'],
+#                 "PASSWORD": env['DATABASE_PASSWORD'],
+#                 "HOST": env['DATABASE_HOST'],
+#                 "PORT":"5432", 
+#     }
+
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+    #     "NAME": "d5gilrqcksk06t",
+    #     "USER": "easonxsctfwuug",
+    #     "PASSWORD": "986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
+    #     "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
+    #     "PORT": "5432",
+    # }
 }
 
 
@@ -123,15 +144,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
+API_KEY = env['API_KEY_SPOONACULAR']  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -144,7 +165,22 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
-#Define COOKIE AGE for Remember me section
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 30 * 12 # 12 Months (Months are 30days so 360 days in total)
+# Define COOKIE AGE for Remember me section
+SESSION_COOKIE_AGE = (
+    60 * 60 * 24 * 30 * 12
+)  # 12 Months (Months are 30days so 360 days in total)
+
+# AWS
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+AWS_S3_REGION_NAME = "us-east-2"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
