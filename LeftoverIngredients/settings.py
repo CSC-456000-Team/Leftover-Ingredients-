@@ -82,15 +82,15 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "d5gilrqcksk06t",
-        "USER": "easonxsctfwuug",
-        "PASSWORD": "986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
-        "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
-        "PORT": "5432",
-    }
+    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+    #     "NAME": "d5gilrqcksk06t",
+    #     "USER": "easonxsctfwuug",
+    #     "PASSWORD": "986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
+    #     "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
+    #     "PORT": "5432",
+    # }
 }
 
 
