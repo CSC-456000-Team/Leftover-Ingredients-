@@ -40,9 +40,13 @@
       {% if searched %}
       <h1>You Searched for {{ searched }}</h1>
       <br />
-      <!-- {% for recipe in recipes %} -->
-      <!-- <a href="#">{{ recipe.title }}</a><br> -->
-      <!-- {% endfor %} -->
+      {% for recipe in recipes %}
+      <a href="#">{{ recipe.title }}</a>
+      <br>
+      {{ recipe.recipe_url }}
+      <br>
+
+      {% endfor %}
       {% else %}
       <h1>Search Our Best Recipes!</h1>
       {% endif %}
