@@ -149,8 +149,14 @@ a.article-title:hover {
   padding: 40px 0;
 }
 
-.container-wrapper {
-  height: 500px;
+.container-wrapper-70h {
+  height: 70vh;
+  min-height: 25rem;
+  position: relative;
+}
+.container-wrapper-85h {
+  height: 85vh;
+  min-height: 25rem;
   position: relative;
 }
 
