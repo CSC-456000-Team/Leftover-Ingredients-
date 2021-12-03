@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 # Random Secret Key generaged for temporary using.
 SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 # "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
@@ -32,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
 # ["127.0.0.1", ".herokuapp.com"]
-
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
@@ -159,7 +159,6 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-
 
 # API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
