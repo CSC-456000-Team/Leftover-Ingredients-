@@ -22,19 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 # Random Secret Key generaged for temporary using.
 SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 # "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
 # env['DJANGO_SECRET_KEY']
-=======
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
-=======
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,8 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
 # ["127.0.0.1", ".herokuapp.com"]
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
     ("David", "dbalaba000@citymail.cuny.edu"),
@@ -60,10 +50,6 @@ ADMINS = [
 # EMAIL_HOST_PASSWORD = env["EMAIL_HOST_PASSWORD"]
 
 
-=======
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
-=======
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
 # Application definition
 
 INSTALLED_APPS = [
@@ -118,8 +104,6 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 
 DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
-<<<<<<< HEAD
-<<<<<<< HEAD
     #     "default": {
     #                 "ENGINE": "django.db.backends.postgresql_psycopg2",
     #                 "NAME": "d5gilrqcksk06t",
@@ -128,10 +112,6 @@ DATABASES = {
     #                 "HOST": env['DATABASE_HOST'],
     #                 "PORT":"5432",
     #     }
-=======
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
-=======
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
     # "default": {
     #     "ENGINE": "django.db.backends.postgresql_psycopg2",
     #     "NAME": "d5gilrqcksk06t",
@@ -180,15 +160,10 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
-=======
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
-=======
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
->>>>>>> parent of 1723781 (Merge pull request #6 from CSC-456000-Team/main)
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
