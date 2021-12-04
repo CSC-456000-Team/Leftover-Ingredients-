@@ -70,6 +70,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -184,9 +185,12 @@ SESSION_COOKIE_AGE = (
 )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_ACCESS_KEY_ID = "AKIAXFBBWTDRYGTZ6GKN"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "leftoveringredients-django-files"
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
