@@ -149,14 +149,8 @@ a.article-title:hover {
   padding: 40px 0;
 }
 
-.container-wrapper-70h {
-  height: 70vh;
-  min-height: 25rem;
-  position: relative;
-}
-.container-wrapper-85h {
-  height: 85vh;
-  min-height: 25rem;
+.container-wrapper {
+  height: 500px;
   position: relative;
 }
 
@@ -259,7 +253,6 @@ a.article-title:hover {
     grid-template-columns: 200px 1fr;
     gap: 1rem;
   }
-
   .recipes-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -415,10 +408,8 @@ a.article-title:hover {
 }
 
 #index-header {
-  background: url("img/pexels-angus-chang-3979414.jpg")
+  background: url("https://i.ibb.co/7X9qWwW/pexels-angus-chang-3979414.jpg")
     white no-repeat center center scroll;
-  /* background: url("{% static 'img/pexels-angus-chang-3979414.jpg' %}")
-    white no-repeat center center scroll; */
   /* background: url('https://i.ibb.co/VqKB03d/pexels-daria-shevtsova-4117543-1.jpg') white no-repeat center center scroll; */
   background-size: cover;
 }
