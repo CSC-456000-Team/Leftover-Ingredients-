@@ -155,6 +155,7 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
+# STATICFILE_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -194,3 +195,5 @@ AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# Automatically put your static files in your bucket
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
