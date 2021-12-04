@@ -32,7 +32,6 @@ SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
-# ["127.0.0.1", ".herokuapp.com"]
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
@@ -66,10 +65,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "storages",
 ]
-# django_heroku.settings(locals(), staticfiles=False)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -97,7 +96,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -135,7 +133,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -155,14 +152,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 # API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -175,12 +171,10 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-# django_heroku.settings(locals())
-
 # Define COOKIE AGE for Remember me section
-SESSION_COOKIE_AGE = (
-    60 * 60 * 24 * 30 * 12
-)  # 12 Months (Months are 30days so 360 days in total)
+# SESSION_COOKIE_AGE = (
+#     60 * 60 * 24 * 30 * 12
+# )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -194,3 +188,7 @@ AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# Automatically put your static files in your bucket
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
+
+# django_heroku.settings(locals())
