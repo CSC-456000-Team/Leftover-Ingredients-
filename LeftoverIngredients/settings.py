@@ -70,6 +70,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -149,20 +150,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 # API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -174,8 +173,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
-
-# django_heroku.settings(locals())
 
 # Define COOKIE AGE for Remember me section
 SESSION_COOKIE_AGE = (
@@ -194,3 +191,7 @@ AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# "django.contrib.staticfiles.storage.StaticFilesStorage"
+
+# django_heroku.settings(locals())
