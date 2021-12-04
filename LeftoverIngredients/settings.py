@@ -180,9 +180,9 @@ LOGIN_URL = "login"
 # django_heroku.settings(locals())
 
 # Define COOKIE AGE for Remember me section
-SESSION_COOKIE_AGE = (
-    60 * 60 * 24 * 30 * 12
-)  # 12 Months (Months are 30days so 360 days in total)
+# SESSION_COOKIE_AGE = (
+#     60 * 60 * 24 * 30 * 12
+# )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
 # AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -190,14 +190,14 @@ SESSION_COOKIE_AGE = (
 # AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_ACCESS_KEY_ID = "AKIAXFBBWTDRYGTZ6GKN"
 AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "leftoveringredients-django-files"
+AWS_STORAGE_BUCKET_NAME = "leftoveringredients-django-files-1"
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-AWS_S3_REGION_NAME = "us-east-2"
-AWS_S3_SIGNATURE_VERSION = "s3v4"
+# AWS_S3_REGION_NAME = "us-east-2"
+# AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # Automatically put your static files in your bucket
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
+# STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
