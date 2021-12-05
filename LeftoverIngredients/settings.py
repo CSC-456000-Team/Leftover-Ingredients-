@@ -33,6 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1"]
 
+
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
     ("David", "dbalaba000@citymail.cuny.edu"),
