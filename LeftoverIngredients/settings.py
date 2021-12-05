@@ -115,26 +115,9 @@ DATABASES = {
     #     }
 }
 
+# Overwites default database to Heroku postgresql db
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES["default"].update(db_from_env)
-
-#     "default": {
-#                 "ENGINE": "django.db.backends.postgresql_psycopg2",
-#                 "NAME": "d5gilrqcksk06t",
-#                 "USER": env['DATABASE_USER'],
-#                 "PASSWORD": env['DATABASE_PASSWORD'],
-#                 "HOST": env['DATABASE_HOST'],
-#                 "PORT":"5432",
-#     }
-# "default": {
-#     "ENGINE": "django.db.backends.postgresql_psycopg2",
-#     "NAME": "d5gilrqcksk06t",
-#     "USER": "easonxsctfwuug",
-#     "PASSWORD": "986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
-#     "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
-#     "PORT": "5432",
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -205,5 +188,3 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # Automatically put your static files in your bucket
 STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
-
-# django_heroku.settings(locals())
