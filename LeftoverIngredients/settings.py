@@ -24,19 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-# Random Secret Key generaged for temporary using.
 SECRET_KEY = os.environ["SECRET_KEY"]
-# "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
-# "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
-# env['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ["DEBUG_VALUE"] == "TRUE"
+# If local runserver is not working
 # DEBUG = False
-DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
+# If deloy on heroku is not working
+# DEBUG = False
 
 ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1"]
-
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
@@ -148,10 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "staticfiles")
 STATIC_URL = "/static/"
 
 STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
@@ -159,7 +153,7 @@ STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-# API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
+# API_KEY = os.environ["API_KEY_SPOONACULAR"] # Spoonacular API key from Heroku server
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
@@ -179,10 +173,6 @@ LOGIN_URL = "login"
 # )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
-# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-# AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
 AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
