@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Random Secret Key generaged for temporary using.
-SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
+SECRET_KEY = os.environ["SECRET_KEY"]
+# "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 # "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
 # env['DJANGO_SECRET_KEY']
 
@@ -175,9 +176,13 @@ LOGIN_URL = "login"
 # )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
