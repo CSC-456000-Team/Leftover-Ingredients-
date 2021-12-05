@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-import django_heroku
+import dj_database_url
+
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,15 +25,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = "e5e2eb0889b637b654ca2bc30f40fc5a79dbb4da26240648"
+# Random Secret Key generaged for temporary using.
+SECRET_KEY = os.environ["SECRET_KEY"]
+# "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
+# "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
+# env['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 
-ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
-# ["127.0.0.1", ".herokuapp.com"]
+ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1"]
+
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
@@ -96,30 +101,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
     #     "default": {
-    #                 "ENGINE": "django.db.backends.postgresql_psycopg2",
-    #                 "NAME": "d5gilrqcksk06t",
-    #                 "USER": env['DATABASE_USER'],
-    #                 "PASSWORD": env['DATABASE_PASSWORD'],
-    #                 "HOST": env['DATABASE_HOST'],
-    #                 "PORT":"5432",
+    #         "ENGINE": "django.db.backends.postgresql",
+    #         "NAME": "DEMO_TEST",
+    #         "USER": "postgres",
+    #         "PASSWORD": "0564",
+    #         "HOST": "localhost",
+    #         "PORT": "5432",
     #     }
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
-    #     "NAME": "d5gilrqcksk06t",
-    #     "USER": "easonxsctfwuug",
-    #     "PASSWORD": "986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
-    #     "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
-    #     "PORT": "5432",
-    # }
 }
 
+# Overwites default database to Heroku postgresql db
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES["default"].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -132,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -156,14 +154,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 # API_KEY = env["API_KEY_SPOONACULAR"]  # Spoonacular API key
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -177,14 +174,18 @@ LOGIN_REDIRECT_URL = "main-home"
 LOGIN_URL = "login"
 
 # Define COOKIE AGE for Remember me section
-SESSION_COOKIE_AGE = (
-    60 * 60 * 24 * 30 * 12
-)  # 12 Months (Months are 30days so 360 days in total)
+# SESSION_COOKIE_AGE = (
+#     60 * 60 * 24 * 30 * 12
+# )  # 12 Months (Months are 30days so 360 days in total)
 
 # AWS
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
@@ -193,16 +194,5 @@ AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
-# Testing
-# print(os.environ.get('AWS_ACCESS_KEY_ID'))
-# print(os.environ.get('AWS_SECRET_ACCESS_KEY'))
-# print(os.environ.get('AWS_STORAGE_BUCKET_NAME'))
-
-# django_heroku.settings(locals())
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-# "django.contrib.staticfiles.storage.StaticFilesStorage"
-
-# django_heroku.settings(locals())
+# Automatically put your static files in your bucket
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"

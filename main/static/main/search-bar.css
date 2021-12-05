@@ -47,7 +47,6 @@
 }
 
 .choices[data-type*="select-one"] .choices__button {
-  /* background-image: url("../../icons/cross-inverse.svg"); */
   padding: 0;
   background-size: 8px;
   height: 100%;
