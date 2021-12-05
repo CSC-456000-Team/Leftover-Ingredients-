@@ -31,7 +31,7 @@ SECRET_KEY = "ce38c878ed7ba4a495bd55dd178802967d74b87954e378a1"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "fathomless-cliffs-95117.herokuapp.com"]
+ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1"]
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),
