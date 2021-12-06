@@ -1,3 +1,12 @@
+# Static Images #
+/main/static/img/*
+
+# Static Files #
+staticfiles/*
+
+# Mac
+.DS_Store
+
 # Django #
 *.log
 *.pot
@@ -25,6 +34,7 @@ media
 *.iws /out/
 
 # Python #
+__pycache__/
 *.py[cod]
 *$py.class
 
