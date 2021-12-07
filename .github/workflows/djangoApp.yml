@@ -22,11 +22,9 @@ jobs:
           pip install -r requirements.txt
       - name: Lint with Flake8
         run: |
-          pip install flake8
           flake8
       - name: Coverage Report
         run: |
-          pip install coverage
           coverage run manage.py test
           coverage report
       - name: Run Migrations
