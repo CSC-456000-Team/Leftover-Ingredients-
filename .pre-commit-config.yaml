@@ -28,8 +28,8 @@ repos:
     hooks:
       - id: mypy
         exclude: ^tests/
-        # args: [--strict]
-        args: [--ignore-missing-imports]
+        args: [--strict]
+        # args: [--ignore-missing-imports]
 
 
 
