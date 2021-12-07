@@ -8,6 +8,9 @@ repos:
       - id: flake8
       - id: check-ast
       - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: debug-statements
+      - id: detect-private-key
   - repo: https://github.com/asottile/seed-isort-config
     rev: v2.2.0
     hooks:
@@ -20,6 +23,14 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v0.782
+  #   hooks:
+  #     - id: mypy
+  #       exclude: ^tests/
+  #       args: [--strict]
+  #       pass_filenames: false
+  #       args: [--ignore-missing-imports]
   # - repo: https://github.com/pre-commit/mirrors-prettier
   #   rev: ""
   #   hooks:
