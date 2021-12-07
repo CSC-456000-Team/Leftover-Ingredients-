@@ -4,8 +4,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-# API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"
-API_KEY = str(os.environ['API_KEY_SPOONACULAR'])
+API_KEY = str(os.environ["API_KEY_SPOONACULAR"])
 
 # Gets the id's of recipes containing the searched ingredients, ingredients must be a comma-separated list
 def get_recipe_ids(ingredients):
@@ -37,11 +36,7 @@ def get_recipes(recipe_ids):
         recipe_url = results["sourceUrl"]
 
         recipe = {"title": title, "image": image, "recipe_url": recipe_url}
-        # recipe = [title, image, recipe_url]
 
         recipes.append(recipe)
 
     return recipes
-
-
-# print(get_recipes(get_recipe_ids("apple, banana")))
