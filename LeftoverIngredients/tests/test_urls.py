@@ -32,9 +32,9 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func, about)
 
     def test_recipe_url_resolves(self):
-        url = reverse("main-recipe")
+        url = reverse("recipe-home")
         self.assertEquals(resolve(url).func, recipe)
 
     def test_search_url_resolves(self):
-        url = reverse("main-search")
+        url = reverse("recipe-search")
         self.assertEquals(resolve(url).func, search)
