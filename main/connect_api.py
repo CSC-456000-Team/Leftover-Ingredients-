@@ -5,7 +5,7 @@ import json
 API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"
 
 # Gets the id's of recipes containing the searched ingredients, ingredients must be a comma-separated list
-def get_recipes_ids(ingredients):
+def get_recipe_ids(ingredients):
     search_url = f"https://api.spoonacular.com/recipes/findByIngredients?ingredients={ingredients}&number=3&apiKey={API_KEY}"
 
     r = requests.get(search_url)
@@ -34,10 +34,11 @@ def get_recipes(recipe_ids):
         recipe_url = results["sourceUrl"]
 
         recipe = {"title": title, "image": image, "recipe_url": recipe_url}
+        # recipe = [title, image, recipe_url]
 
         recipes.append(recipe)
 
     return recipes
 
 
-# print(get_recipes(get_recipes_ids("apple, banana")))
+# print(get_recipes(get_recipe_ids("apple, banana")))

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .connect_api import get_recipes
+from .connect_api import get_recipe_ids, get_recipes
 
 # from django.http import HttpResponse
 
@@ -15,7 +15,8 @@ def about(request):
 def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
-        recipes = get_recipes(searched)
+        recipe_ids = get_recipe_ids(searched)
+        recipes = get_recipes(recipe_ids)
         return render(
             request, "main/search.html", {"searched": searched, "recipes": recipes}
         )
