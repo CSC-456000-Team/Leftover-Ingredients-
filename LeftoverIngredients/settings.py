@@ -33,7 +33,7 @@ DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 # If deloy on heroku is not working
 # DEBUG = False
 
-ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1", "localhost"]
 
 ADMINS = [
     ("Anthony", "acampan000@citymail.cuny.edu"),

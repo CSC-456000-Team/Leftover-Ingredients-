@@ -39,17 +39,26 @@
     <center>
       {% if searched %}
       <h1>You Searched for {{ searched }}</h1>
-      <br />
-      <!-- {% for recipe in recipes %} -->
-      <!-- <a href="#">{{ recipe.title }}</a><br> -->
-      <!-- {% endfor %} -->
+      <br/>
+        <table>
+          {% for recipe in recipes %}
+            <!-- <a href="{{ url }}">{{ title }}</a> -->
+            <tr>
+              <td><a href="{{ recipe.recipe_url }}">{{ recipe.title }}</a></td>
+              <td><a href="{{ recipe.recipe_url }}">
+                <img alt="Image of dish not found" src="{{ recipe.image }}"
+                width=150" height="70"></td>
+              </a>
+            </tr>
+          {% endfor %}
+        </table>
       {% else %}
       <h1>Search Our Best Recipes!</h1>
       {% endif %}
     </center>
 
     <!-- need to update after DB model set up -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
           <img
@@ -130,8 +139,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     {% endblock content %} {% block team-members %}{% endblock team-members %}
   </div>
 </div>
