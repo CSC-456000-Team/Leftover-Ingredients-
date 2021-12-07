@@ -153,7 +153,9 @@ STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = os.environ["API_KEY_SPOONACULAR"]  # Spoonacular API key from Heroku server
+API_KEY = os.environ.get(
+    "API_KEY_SPOONACULAR"
+)  # Spoonacular API key from Heroku server
 # API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
