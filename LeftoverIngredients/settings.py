@@ -24,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["SECRET_KEY"]
+# SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = "e5e2eb0889b637b654ca2bc30f40fc5a79dbb4da26240648"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ["DEBUG_VALUE"] == "TRUE"
+# DEBUG = os.environ["DEBUG_VALUE"] == "TRUE"
 # If local runserver is not working
-# DEBUG = False
+DEBUG = True
 # If deloy on heroku is not working
 # DEBUG = False
 
@@ -43,12 +44,12 @@ ADMINS = [
 ]
 
 # Email Settings: Setting up the account that the application is going to use to send emails from
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = env["EMAIL_HOST_USER"]
-# EMAIL_HOST_PASSWORD = env["EMAIL_HOST_PASSWORD"]
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
+EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
 
 
 # Application definition
@@ -153,8 +154,8 @@ STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-# API_KEY = os.environ["API_KEY_SPOONACULAR"] # Spoonacular API key from Heroku server
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
+API_KEY = os.environ["API_KEY_SPOONACULAR"] # Spoonacular API key from Heroku server
+# API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
