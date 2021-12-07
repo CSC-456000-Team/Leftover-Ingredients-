@@ -2,7 +2,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.test import SimpleTestCase
 from django.urls import resolve, reverse
 
-from main.views import about, home, recipe, search
+from main.views import about, home
+from recipe.views import recipe, search
 from users.views import profile, register
 
 
