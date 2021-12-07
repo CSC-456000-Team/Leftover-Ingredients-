@@ -48,8 +48,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
-EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 
 # Application definition
@@ -154,7 +154,7 @@ STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = os.environ["API_KEY_SPOONACULAR"] # Spoonacular API key from Heroku server
+API_KEY = os.environ["API_KEY_SPOONACULAR"]  # Spoonacular API key from Heroku server
 # API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
