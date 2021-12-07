@@ -24,13 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ["SECRET_KEY"]
-SECRET_KEY = "e5e2eb0889b637b654ca2bc30f40fc5a79dbb4da26240648"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ["DEBUG_VALUE"] == "TRUE"
+DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 # If local runserver is not working
-DEBUG = True
+# DEBUG = True
 # If deloy on heroku is not working
 # DEBUG = False
 
@@ -154,7 +153,9 @@ STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-API_KEY = os.environ["API_KEY_SPOONACULAR"]  # Spoonacular API key from Heroku server
+API_KEY = os.environ.get(
+    "API_KEY_SPOONACULAR"
+)  # Spoonacular API key from Heroku server
 # API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
