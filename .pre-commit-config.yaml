@@ -8,8 +8,10 @@ repos:
       - id: flake8
       - id: check-ast
       - id: check-merge-conflict
+      - id: check-case-conflict
       - id: debug-statements
       - id: detect-aws-credentials
+      - id: detect-private-key
   - repo: https://github.com/asottile/seed-isort-config
     rev: v2.2.0
     hooks:
@@ -29,6 +31,9 @@ repos:
         exclude: ^tests/
         # args: [--strict]
         args: [--ignore-missing-imports]
+
+
+
   # - repo: https://github.com/pre-commit/mirrors-prettier
   #   rev: ""
   #   hooks:
