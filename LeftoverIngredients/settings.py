@@ -164,7 +164,6 @@ MEDIA_URL = "/media/"
 API_KEY = os.environ.get(
     "API_KEY_SPOONACULAR"
 )  # Spoonacular API key from Heroku server
-# API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

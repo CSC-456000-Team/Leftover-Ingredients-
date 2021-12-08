@@ -34,7 +34,7 @@
     </center>
   </div>
 </div>
-<div class="album py-5 bg-light">
+<!-- <div class="album py-5 bg-light">
   <div class="container">
     <center>
       {% if searched %}
@@ -43,7 +43,7 @@
         <table>
           {% for recipe in recipes %}
             <!-- <a href="{{ url }}">{{ title }}</a> -->
-            <tr>
+            <!-- <tr>
               <td><a href="{{ recipe.recipe_url }}">{{ recipe.title }}</a></td>
               <td><a href="{{ recipe.recipe_url }}">
                 <img alt="Image of dish not found" src="{{ recipe.image }}"
@@ -54,8 +54,37 @@
         </table>
       {% else %}
       <h1>Search Our Best Recipes!</h1>
+      {% endif %} -->
+    </center> -->
+
+    <section class="recipes-container">
+      <div class="tags-container">
+      </div>
+      <center>
+        {% if searched %}
+        <h1>You Searched for {{ searched }}</h1>
+        <br/>
+  
+      <div class="recipes-list">
+        {% for recipe in recipes %}
+          <!-- single recipe -->
+          <a href="{% url 'recipe-detail' %}" class="recipe">
+            <img
+              src="{{ recipe.image }}"
+              class="img recipe-img"
+              alt="">
+            <h5>{{ recipe.title }}</h5>
+            <p>Servings : {{ recipe.servings }} | Time : {{ recipe.time }} minutes</p>
+          </a>
+          <!-- end of single recipe -->
+        {% endfor %}
+      </div>
+      {% else %}
+      <h1>Search Our Best Recipes!</h1>
       {% endif %}
     </center>
+  
+    </section>
 
     <!-- need to update after DB model set up -->
     <!-- <div class="row">
