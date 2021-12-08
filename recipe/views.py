@@ -44,3 +44,6 @@ def search(request):
         )
     else:
         return render(request, "main/search.html", {"title": "Search"})
+
+def singleRecipe(request):
+    return render(request, "main/singleRecipe.html", {"title": "singleRecipe"})
