@@ -13,6 +13,7 @@ h6 {
 	color: #444444;
 }
 
+
 ul {
 	margin: 0;
 }
@@ -404,6 +405,131 @@ a.article-title:hover {
 	color: #1da3c5;
 }
 
+.test h2 {
+	color: red;
+}
+
+/***************
+Recipe Page CSS
+***************/
+
+.recipe-page {
+    width: 90vw;
+    color:red;
+    margin: 0 auto;
+}
+
+.recipe-hero {
+    display: grid;
+    gap: 3rem;
+  }
+.recipe-hero-img {
+    height: 350px;
+    padding: 5px;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+.recipe-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+.recipe-nutrition {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+
+  align-items: center;
+  text-align: center;
+}
+
+.recipe-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	}
+
+ul#horizontal-list li {
+    background-color: black;
+    border-radius: 0.25rem;
+    color: white;
+	display: inline;
+    text-align: center;
+    padding: 5px;
+    text-transform: capitalize;
+
+}
+
+@media screen and (min-width: 992px) {
+    .recipe-hero {
+      grid-template-columns: 4fr 5fr;
+      align-items: center;
+    }
+  }
+
+.recipe-content {
+    padding: 3rem 0;
+    display: grid;
+    gap: 2rem 5rem;
+}
+
+@media screen and (min-width: 992px) {
+    .recipe-content {
+      grid-template-columns: 2fr 1fr;
+    }
+}
+
+.single-instruction header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    
+}
+
+.single-instruction header p {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.single-instruction header div {
+  height: 2px;
+  background: #cbd5e1;
+}
+
+.second-column {
+    display: grid;
+    row-gap: 2rem;
+  }
+
+.single-ingredient {
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 0.75rem;
+}
+
+.single-tool {
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+
+
 /* Index Page Search Bar Section*/
 #index-header {
 	position: relative;
@@ -469,3 +595,5 @@ a.article-title:hover {
     display: none;
   }
 } */
+
+
