@@ -405,9 +405,6 @@ a.article-title:hover {
 	color: #1da3c5;
 }
 
-.test h2 {
-	color: red;
-}
 
 /***************
 Recipe Page CSS
@@ -415,7 +412,7 @@ Recipe Page CSS
 
 .recipe-page {
     width: 90vw;
-    color:red;
+    color:black;
     margin: 0 auto;
 }
 
