@@ -19,7 +19,7 @@
     </div>
 
     <div class="recipes-list">
-      <a href="" class="recipe">
+      <!-- <a href="" class="recipe">
         <img
           src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
           class="img recipe-img"
@@ -27,44 +27,24 @@
         />
         <h5>Mushroom and Brussels Sprouts Pizza</h5>
         <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
+      </a> -->
       <!-- end of single recipe -->
 
+      {% for recipe in recipes %}
+        <!-- single recipe -->
+        <a href="main/single-recipe.html" class="recipe">
+          <img
+            src="{{ recipe.image }}"
+            class="img recipe-img"
+            alt="">
+          <h5>{{ recipe.title }}</h5>
+          <p>Servings : {{ recipe.servings }} | Time : {{ recipe.time }} minutes</p>
+        </a>
+        <!-- end of single recipe -->
+      {% endfor %}
+
       <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
+       <!-- <a href="single-recipe.html" class="recipe">
         <img
           src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
           class="img recipe-img"
@@ -72,205 +52,7 @@
         />
         <h5>Mushroom and Brussels Sprouts Pizza</h5>
         <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
-      <!-- end of single recipe -->
-
-      <!-- single recipe -->
-      <a href="single-recipe.html" class="recipe">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*"
-          class="img recipe-img"
-          alt=""
-        />
-        <h5>Mushroom and Brussels Sprouts Pizza</h5>
-        <p>Calories : ? | Time : ?</p>
-      </a>
+      </a> -->
       <!-- end of single recipe -->
 
 
