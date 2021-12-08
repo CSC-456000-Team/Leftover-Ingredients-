@@ -32,17 +32,18 @@ def get_recipe_ids(ingredients):
 # Gets the names, images, and URLs of the sources of each recipe
 def get_recipe(recipe_id):
 
-    info_url = f"https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={API_KEY}"
+    info_url = f"https://api.spoonacular.com/recipes/{recipe_id}/information?includeNutrition=true&apiKey={API_KEY}"
     r = requests.get(info_url)
     results = json.loads(r.text)
 
     title = results["title"]
     image = results["image"]
     servings = results["servings"]
+    calories = results["nutrition"]["nutrients"][0]["amount"]
     time = results["readyInMinutes"]
     summary = results["summary"]
 
-    recipe = {"recipe_id": recipe_id, "title": title, "image": image, "servings": servings, "time": time, "summary": summary}
+    recipe = {"recipe_id": recipe_id, "title": title, "image": image, "servings": servings, "calories": calories, "time": time, "summary": summary}
 
     return recipe
 
