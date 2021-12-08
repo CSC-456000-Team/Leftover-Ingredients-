@@ -1,3 +1,6 @@
+# Heroku local run .env file #
+.env
+
 # Static Images #
 /main/static/img/*
 
