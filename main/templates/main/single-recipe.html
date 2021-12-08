@@ -3,7 +3,7 @@
     <section class="recipe-hero">
      <!-- <img src="./images/bg1.jpg" class="img recipe-hero-img" /> -->
       <article class="recipe-info">
-        <h2>Banana Pancakes recipe</h2>
+        <h2>{{ recipe.title }}</h2>
         <p>
           meal description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti libero non, pariatur alias hic quaerat doloremque ipsum rem, odio doloribus necessitatibus quae voluptas nostrum! Voluptatibus voluptas blanditiis ratione neque perspiciatis?
         </p>
@@ -68,37 +68,17 @@
       <article>
         <h4>Instructions</h4>
         <!-- single instruction -->
+        {% for step in steps %}
         <div class="single-instruction">
           <header>
-            <p>step 1</p>
+            <p>step {{ step.number }}</p>
             <div></div>
           </header>
           <p>
-            step 1 desc.
+            {{ step.step }}
           </p>
         </div>
-        <!-- end of single instruction -->
-        <!-- single instruction -->
-        <div class="single-instruction">
-          <header>
-            <p>step 2</p>
-            <div></div>
-          </header>
-          <p>
-            step 2 desc.
-          </p>
-        </div>
-        <!-- end of single instruction -->
-        <!-- single instruction -->
-        <div class="single-instruction">
-          <header>
-            <p>step 3</p>
-            <div></div>
-          </header>
-          <p>
-            step 3 desc 
-          </p>
-        </div>
+        {% endfor %}
         <!-- end of single instruction -->
       </article>
       <article class="second-column">
@@ -109,11 +89,10 @@
           <p class="single-ingredient">1 cup skim milk</p>
         </div>
         <div>
-          <h4>Tools</h4>
-          <p class="single-tool">Hand Blender</p>
-          <p class="single-tool">Large Heavy Pot With Lid</p>
-          <p class="single-tool">Measuring Spoons</p>
-          <p class="single-tool">Measuring Cups</p>
+          <h4>Equipment</h4>
+          {% for e in equipment %}
+          <p class="single-tool">{{ e }}</p>
+          {% endfor %}
         </div>
       </article>
     </section>

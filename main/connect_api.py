@@ -30,24 +30,28 @@ def get_recipe_ids(ingredients):
 
 
 # Gets the names, images, and URLs of the sources of each recipe
+def get_recipe(recipe_id):
+
+    info_url = f"https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={API_KEY}"
+    r = requests.get(info_url)
+    results = json.loads(r.text)
+
+    title = results["title"]
+    image = results["image"]
+    servings = results["servings"]
+    time = results["readyInMinutes"]
+
+
+    recipe = {"title": title, "image": image, "servings": servings, "time": time}
+
+    return recipe
+
 def get_recipes(recipe_ids):
     recipes = []
-
     for recipe_id in recipe_ids:
-        info_url = f"https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={API_KEY}"
-        r = requests.get(info_url)
-        results = json.loads(r.text)
-
-        title = results["title"]
-        image = results["image"]
-        servings = results["servings"]
-        time = results["readyInMinutes"]
-
-        recipe = {"title": title, "image": image, "servings": servings, "time": time}
-
-        recipes.append(recipe)
-
+        recipes.append(get_recipe(recipe_id))
     return recipes
+
 
 # Meal types: breakfast, dessert, main course, snack (?)
 def get_random_recipes(category):
@@ -69,16 +73,31 @@ def get_random_recipes(category):
 
     return random_recipes
 
-def get_recipe_steps(recipe_id):
+def get_recipe_details(recipe_id):
     steps = []
+    equipment = []
 
     url = f"https://api.spoonacular.com/recipes/{recipe_id}/analyzedInstructions?apiKey={API_KEY}"
     r = requests.get(url)
     results = json.loads(r.text)
 
     for step in results[0]["steps"]:
-        steps.append(step["step"])
+        number = step["number"]
+        s = step["step"]
+        steps.append({"number": number, "step": s})
+        for e in step["equipment"]:
+            if e["name"] not in equipment:
+                equipment.append(e["name"])
 
-    return steps
+    # url = 
 
-# print (get_recipe_steps(651389))
+    details = {"steps": steps, "equipment": equipment}
+    return details
+
+
+# def get_recipe_details(recipe_id):
+#     details = {}
+    
+#     url = f""
+
+# print (get_recipe_details(651389))

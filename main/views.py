@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .connect_api import get_recipe_ids, get_recipes, get_random_recipes
+from .connect_api import get_recipe_ids, get_recipe, get_recipes, get_random_recipes, get_recipe_details
 
 # from django.http import HttpResponse
 
@@ -31,6 +31,8 @@ def recipe(request):
 
     return render(request, "main/recipe.html", {"recipes": recipes})
 
-def single_recipe(request):
-
-    return render(request, "main/single-recipe.html", {})
+def single_recipe(request, recipe_id):
+    recipe = get_recipe(recipe_id)
+    steps = get_recipe_details(recipe_id)["steps"]
+    equipment = get_recipe_details(recipe_id)["equipment"]
+    return render(request, "main/single-recipe.html", {"recipe": recipe, "steps": steps, "equipment": equipment})
