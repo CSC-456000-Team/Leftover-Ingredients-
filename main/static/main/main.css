@@ -582,6 +582,35 @@ ul#horizontal-list li {
 	opacity: 0.2;
 	z-index: 1;
 }
+
+/* Header banner */
+
+.hero {
+	height: 40vh;
+	position: relative;
+	margin-bottom: 2rem;
+	background: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mushroom-and-brussels-sprouts-pizza-1614005258.jpg?crop=0.747xw:0.748xh;0.128xw,0.126xh&resize=980:*") center/cover no-repeat;
+	border-radius: var(--borderRadius);
+  }
+
+.hero-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: var(--borderRadius);
+}
+
+.hero-text {
+	color: var(--white);
+	text-align: center;
+  }
+
 /*
 @media (pointer: coarse) and (hover: none) {
   header {
