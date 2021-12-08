@@ -9,7 +9,7 @@ API_KEY = str(os.environ["API_KEY_SPOONACULAR"])
 
 # Gets the id's of recipes containing the searched ingredients, ingredients must be a comma-separated list
 def get_recipe_ids(ingredients):
-    search_url = f"https://api.spoonacular.com/recipes/findByIngredients?ingredients={ingredients}&number=3&apiKey={API_KEY}"
+    search_url = f"https://api.spoonacular.com/recipes/findByIngredients?ingredients={ingredients}&number=5&apiKey={API_KEY}"
 
     r = requests.get(search_url)
 
