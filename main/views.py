@@ -36,3 +36,6 @@ def recipe(request):
     snack = get_random_recipes("snack")
 
     return render(request, "main/recipe.html", {"recipes": recipes, "main_courses": main_course, "snack": snack})
+
+def single_recipe(request):
+    return render(request, "main/single-recipe.html", {})

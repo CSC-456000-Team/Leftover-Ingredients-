@@ -68,7 +68,7 @@
       <div class="recipes-list">
         {% for recipe in recipes %}
           <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
+          <a href="{% url 'recipe-detail' %}" class="recipe">
             <img
               src="{{ recipe.image }}"
               class="img recipe-img"
