@@ -19,7 +19,7 @@ def search(request):
         searched = request.POST["searched"]
         recipe_ids = get_recipe_ids(searched)
         recipes = get_recipes(recipe_ids)
-        
+
         return render(
             request, "main/search.html", {"searched": searched, "recipes": recipes}
         )
@@ -27,7 +27,7 @@ def search(request):
         return render(request, "main/search.html", {})
 
 def recipe(request):
-    recipes = get_random_recipes("breakfast")
+    recipes = get_random_recipes("main+course")
     # main_course = get_random_recipes("main+course")
     # snack = get_random_recipes("snack")
 
