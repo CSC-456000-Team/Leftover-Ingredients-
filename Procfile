@@ -1,1 +1,1 @@
-"web: python manage.py runserver 0.0.0.0:\$PORT"
+web: gunicorn LeftoverIngredients.wsgi --log-file -

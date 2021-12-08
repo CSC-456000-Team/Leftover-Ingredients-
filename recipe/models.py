@@ -3,7 +3,8 @@ from django.db import models
 from django.utils import timezone
 
 
-class Post(models.Model):
+class Recipe(models.Model):
+    # ---------------------- Need to be updated --------------------------
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)

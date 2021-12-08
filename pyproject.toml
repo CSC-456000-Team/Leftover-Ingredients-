@@ -15,3 +15,8 @@
       | dist
     )/
     '''
+    force-exclude = '''
+    /(
+        tests                   # files in this dir are ignored by pre-commit
+    )\
+    '''
