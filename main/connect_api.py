@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 # BASE_DIR = Path(__file__).resolve().parent.parent
 # dotenv_path = os.path.join(BASE_DIR(__file__), '.env')
-load_dotenv()
+# load_dotenv()
 
 API_KEY = str(os.environ.get("API_KEY_SPOONACULAR"))
 
