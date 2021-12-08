@@ -32,7 +32,7 @@
 
       {% for recipe in recipes %}
         <!-- single recipe -->
-        <a href="{% url 'recipe-detail' %}" class="recipe">
+        <a href="{% url 'recipe-detail' recipe_id=recipe.recipe_id %}" class="recipe">
           <img
             src="{{ recipe.image }}"
             class="img recipe-img"

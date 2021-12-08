@@ -7,5 +7,6 @@ urlpatterns = [
     path("about/", views.about, name="main-about"),
     path("search/", views.search, name="main-search"),
     path("recipe/", views.recipe, name="main-recipe"),
-    path("detail/", views.single_recipe, name="recipe-detail"),
+    # path("detail/", views.single_recipe, name="recipe-detail"),
+    path("detail/<int:recipe_id>/", views.single_recipe, name="recipe-detail"),
 ]

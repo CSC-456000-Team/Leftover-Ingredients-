@@ -55,7 +55,7 @@
       {% else %}
       <h1>Search Our Best Recipes!</h1>
       {% endif %} -->
-    </center> -->
+    </center>
 
     <section class="recipes-container">
       <div class="tags-container">
@@ -67,17 +67,17 @@
   
       <div class="recipes-list">
         {% for recipe in recipes %}
-          <!-- single recipe -->
-          <a href="{% url 'recipe-detail' %}" class="recipe">
-            <img
-              src="{{ recipe.image }}"
-              class="img recipe-img"
-              alt="">
-            <h5>{{ recipe.title }}</h5>
-            <p>Servings : {{ recipe.servings }} | Time : {{ recipe.time }} minutes</p>
-          </a>
-          <!-- end of single recipe -->
-        {% endfor %}
+        <!-- single recipe -->
+        <a href="{% url 'recipe-detail' recipe_id=recipe.recipe_id %}" class="recipe">
+          <img
+            src="{{ recipe.image }}"
+            class="img recipe-img"
+            alt="">
+          <h5>{{ recipe.title }}</h5>
+          <p>Servings : {{ recipe.servings }} | Time : {{ recipe.time }} minutes</p>
+        </a>
+        <!-- end of single recipe -->
+      {% endfor %}
       </div>
       {% else %}
       <h1>Search Our Best Recipes!</h1>
