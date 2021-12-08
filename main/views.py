@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.utils import html
 
-from .connect_api import get_recipe_ids, get_recipe, get_recipes, get_random_recipes, get_recipe_details
+from .connect_api import get_recipe_ids, get_recipes, get_random_recipes, get_recipe_details
 
 # from django.http import HttpResponse
 
@@ -18,6 +19,7 @@ def search(request):
         searched = request.POST["searched"]
         recipe_ids = get_recipe_ids(searched)
         recipes = get_recipes(recipe_ids)
+        
         return render(
             request, "main/search.html", {"searched": searched, "recipes": recipes}
         )
@@ -32,7 +34,10 @@ def recipe(request):
     return render(request, "main/recipe.html", {"recipes": recipes})
 
 def single_recipe(request, recipe_id):
-    recipe = get_recipe(recipe_id)
-    steps = get_recipe_details(recipe_id)["steps"]
-    equipment = get_recipe_details(recipe_id)["equipment"]
-    return render(request, "main/single-recipe.html", {"recipe": recipe, "steps": steps, "equipment": equipment})
+    details = get_recipe_details(recipe_id)
+    info = details["info"]
+    summary = html.format_html(details["info"]["summary"])
+    steps = details["steps"]
+    equipment = details["equipment"]
+    ingredients = details["ingredients"]
+    return render(request, "main/single-recipe.html", {"info": info, "summary": summary, "steps": steps, "equipment": equipment, "ingredients": ingredients})

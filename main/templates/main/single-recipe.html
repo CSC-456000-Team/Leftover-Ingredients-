@@ -3,10 +3,13 @@
     <section class="recipe-hero">
      <!-- <img src="./images/bg1.jpg" class="img recipe-hero-img" /> -->
       <article class="recipe-info">
-        <h2>{{ recipe.title }}</h2>
-        <p>
-          meal description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti libero non, pariatur alias hic quaerat doloremque ipsum rem, odio doloribus necessitatibus quae voluptas nostrum! Voluptatibus voluptas blanditiis ratione neque perspiciatis?
-        </p>
+        <h2>{{ info.title }}</h2>
+        <img
+        src="{{ info.image }}"
+        class="img recipe-img"
+        alt="">
+        <br>
+        {{ summary }}
         <div class="recipe-icons">
           <article>
             <h5>cousine</h5>
@@ -84,9 +87,9 @@
       <article class="second-column">
         <div>
           <h4>Ingredients</h4>
-          <p class="single-ingredient">1 1/2 cups dry pancake mix</p>
-          <p class="single-ingredient">1/2 cup flax seed meal</p>
-          <p class="single-ingredient">1 cup skim milk</p>
+          {% for i in ingredients %}
+          <p class="single-ingredient">{{ i }}</p>
+          {% endfor %}
         </div>
         <div>
           <h4>Equipment</h4>
