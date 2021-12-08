@@ -1,10 +1,15 @@
-import requests
 import json
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
-API_KEY = str(os.environ["API_KEY_SPOONACULAR"])
+import requests
+
+# from dotenv import find_dotenv, load_dotenv
+
+# # BASE_DIR = Path(__file__).resolve().parent.parent
+# # dotenv_path = os.path.join(BASE_DIR(__file__), '.env')
+# load_dotenv(find_dotenv)
+
+API_KEY = str(os.environ.get("API_KEY_SPOONACULAR"))
 
 
 # Gets the id's of recipes containing the searched ingredients, ingredients must be a comma-separated list
