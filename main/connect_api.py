@@ -22,9 +22,9 @@ def get_recipe_ids(ingredients):
     results = json.loads(r.text)
 
     recipe_ids = []
-
-    for recipe in results:
-        recipe_ids.append(recipe["id"])
+    
+    for r in results:
+        recipe_ids.append(r["id"])
 
     return recipe_ids
 
@@ -40,9 +40,9 @@ def get_recipe(recipe_id):
     image = results["image"]
     servings = results["servings"]
     time = results["readyInMinutes"]
+    summary = results["summary"]
 
-
-    recipe = {"title": title, "image": image, "servings": servings, "time": time}
+    recipe = {"recipe_id": recipe_id, "title": title, "image": image, "servings": servings, "time": time, "summary": summary}
 
     return recipe
 
@@ -74,8 +74,10 @@ def get_random_recipes(category):
     return random_recipes
 
 def get_recipe_details(recipe_id):
+    info = get_recipe(recipe_id)
     steps = []
     equipment = []
+    ingredients = []
 
     url = f"https://api.spoonacular.com/recipes/{recipe_id}/analyzedInstructions?apiKey={API_KEY}"
     r = requests.get(url)
@@ -88,10 +90,13 @@ def get_recipe_details(recipe_id):
         for e in step["equipment"]:
             if e["name"] not in equipment:
                 equipment.append(e["name"])
+        for i in step["ingredients"]:
+            if i["name"] not in ingredients:
+                ingredients.append(i["name"])
 
     # url = 
 
-    details = {"steps": steps, "equipment": equipment}
+    details = {"info": info, "steps": steps, "equipment": equipment, "ingredients": ingredients}
     return details
 
 
@@ -101,3 +106,4 @@ def get_recipe_details(recipe_id):
 #     url = f""
 
 # print (get_recipe_details(651389))
+# print (get_recipes(get_recipe_ids("apple")))
