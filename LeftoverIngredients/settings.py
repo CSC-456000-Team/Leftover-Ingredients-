@@ -32,8 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG = True
 # If deloy on heroku is not working
 # DEBUG = False
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-key-123")
 DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -50,13 +49,19 @@ ADMINS = [
     ("test", "tttesttting6@gmail.com"),
 ]
 
-# Email Settings: Setting up the account that the application is going to use to send emails from
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+# Email Settings: Setting up the account that the application is going to use to send emails from using AWS SES backend
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_SES_REGION_NAME = 'us-east-2' #(ex: us-east-2)
+AWS_SES_REGION_ENDPOINT ='email.us-east-2.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = "smtp.gmail.com"
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+#EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 
 # Application definition
@@ -111,14 +116,6 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 
 DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
-    #     "default": {
-    #         "ENGINE": "django.db.backends.postgresql",
-    #         "NAME": "DEMO_TEST",
-    #         "USER": "postgres",
-    #         "PASSWORD": "0564",
-    #         "HOST": "localhost",
-    #         "PORT": "5432",
-    #     }
 }
 
 # Overwites default database to Heroku postgresql db
